@@ -15,5 +15,28 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $('body').append("<h1>hello world, I'm from only javascript!</h1>");
+  $('body').append("<ul><h1>To Dos</h1></ul>");
+
+
+  var $newItemForm = $('#newItemForm');
+  var $textInput = $('input:text');
+  var $newItemButton = $('#newItemButton');
+
+  $newItemButton.show();
+  $newItemForm.hide();
+
+  $('#showForm').on('click', function(){
+    $newItemButton.hide();
+    $newItemForm.show();
+  });
+
+  $newItemForm.on('submit', function(e){
+    e.preventDefault();
+    var newText = $('input:text').val();
+    $('ul').append('<li>' + newText + '</li>');
+    $newItemForm.hide();
+    $newItemButton.show();
+    $textInput.val('');
+  });
+
 });
