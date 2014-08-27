@@ -1,0 +1,17 @@
+<div id="newItemButton"><button href="#" id="showForm">new ToDo</button></div>
+
+<form id="newItemForm" >
+  <%= form_for @todo, url: "/todos" do |f| %>
+
+      <%= f.text_field :todo, id: 'itemName'%>
+
+      <%= f.submit "add ToDo", id: 'addButton'%>
+
+  <% end %>
+
+</form>
+
+
+<h1 id="flash"> <em id="xButton" class="xButton"> &#10175; </em> ToDo created</h1>
+<h1 id="deleteAlert"> <em id="xButton" class="xButton"> &#10175; </em> ToDo deleted</h1>
+
